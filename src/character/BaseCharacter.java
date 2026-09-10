@@ -1,10 +1,14 @@
 package character;
 
+import classes.Job;
+import species.CharacterSpecies;
+import character.Name;
+
 public class BaseCharacter {
 
-    private String name;
-    private String species;
-    private String job;
+    private Name name;
+    private CharacterSpecies species;
+    private Job profession;
     private int health;
     private int strength;
     private int dexterity;
@@ -16,14 +20,14 @@ public class BaseCharacter {
     private int experience;
 
     public BaseCharacter(
-
             // Basic character info
-            String name, String species, String job,
+            Name name, CharacterSpecies species, Job profession,
             // Common stats
             int health, int strength, int dexterity,
-            int intelligence, int constitution, int charisma, int wisdom,
-            // Levelling system
-            int level, int experience) {
+            int intelligence, int constitution, int charisma, int wisdom) {
+        this.name = name;
+        this.species = species;
+        this.profession = profession;
 
     }
 
