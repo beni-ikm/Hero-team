@@ -1,14 +1,18 @@
 package armor;
 
-public abstract class Armor implements Equipable{
+import Equipement.Equipement;
 
-    public String armorName;
-    public int defence;
+public abstract class Armor extends Equipement {
 
-    public Armor(String armorName, int defence){
-        this.armorName = armorName;
+    private int defence;
+
+    public Armor(String name, int defence){
+        super(name);
         this.defence = defence;
     }
 
-    public abstract void showBonus();
+    public void showBonus() {
+        System.out.println("Armor Bonus: Defence +" + defence);
+    }
+
 }

@@ -6,7 +6,9 @@ public class ChainMailArmor extends Armor{
     public int constitutionBonus;
 
     public ChainMailArmor(String armorName, int defence) {
-        super(armorName, defence);
+        super("Chain Mail", 10);
+        this.constitutionBonus = 5;
+        this.strengthBonus = 4;
     }
 
     @Override
@@ -14,13 +16,5 @@ public class ChainMailArmor extends Armor{
         System.out.println("Chain Mail Armor Bonus: Strength +" + strengthBonus + ", Constitution +" + constitutionBonus);
     }
 
-    @Override
-    public void equip(Character character) {
 
-    }
-
-    @Override
-    public void unequip(Character character) {
-
-    }
 }

@@ -6,7 +6,9 @@ public class Robe extends Armor {
     public int wisdomBonus;
 
     public Robe(String armorName, int defence) {
-        super(armorName, defence);
+        super("Robe", 4);
+        this.intelligenceBonus = 10;
+        this.wisdomBonus = 8;
     }
 
     @Override
@@ -14,13 +16,5 @@ public class Robe extends Armor {
         System.out.println("Robe Bonus: Intelligence +" + intelligenceBonus + ", Wisdom +" + wisdomBonus);
     }
 
-    @Override
-    public void equip(Character character) {
 
-    }
-
-    @Override
-    public void unequip(Character character) {
-
-    }
 }

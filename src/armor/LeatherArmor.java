@@ -6,7 +6,10 @@ public class LeatherArmor extends Armor {
     public int charismaBonus;
 
     public LeatherArmor(String armorName, int defence) {
-        super(armorName, defence);
+        super("Leather armor", 6);
+        this.charismaBonus = 8;
+        this.dexterityBonus = 6;
+
     }
 
     @Override
@@ -14,13 +17,4 @@ public class LeatherArmor extends Armor {
         System.out.println("Leather Armor Bonus: Dexterity +" + dexterityBonus + ", Charisma +" + charismaBonus);
     }
 
-    @Override
-    public void equip(Character character) {
-
-    }
-
-    @Override
-    public void unequip(Character character) {
-
-    }
 }
