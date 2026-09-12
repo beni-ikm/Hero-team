@@ -11,8 +11,5 @@ public class Bow extends Weapons {
         this.quiver = quiver;
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Firing the bow!");
-    }
+
 }

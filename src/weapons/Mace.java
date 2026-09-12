@@ -6,8 +6,5 @@ public class Mace extends Weapons {
         super("Mace", 15);
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Swinging the mace!");
-    }
+
 }

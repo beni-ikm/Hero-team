@@ -6,8 +6,5 @@ public class LongSword extends Weapons {
         super("Long Sword", 10);
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Swinging the longsword!");
-    }
+
 }

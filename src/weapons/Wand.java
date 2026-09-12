@@ -9,10 +9,7 @@ public class Wand extends Weapons {
         this.bonusMagic = 5;
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Casting with the wand!");
-    }
+
 
 
 }
