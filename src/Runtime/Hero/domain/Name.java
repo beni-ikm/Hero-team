@@ -1,4 +1,4 @@
-package character;
+package Runtime.Hero.domain;
 
 public class Name {
 
@@ -6,7 +6,7 @@ public class Name {
 
     public Name(String name){
 
-        if (rejects(name)) {
+        if (isInvalid(name)) {
             System.out.println("This name is not valid");
         }
 
@@ -14,7 +14,7 @@ public class Name {
 
     }
 
-    public boolean rejects(String input) {
+    public boolean isInvalid(String input) {
         // Rend vrai si l'entrée est nulle, vide, fait moins de 2 caractères,
         // plus de 20 caractères, ou contient autre chose que des lettres.
         if (input == null || input.isEmpty()) {
@@ -22,7 +22,5 @@ public class Name {
         }
         return !input.matches("^[a-zA-Z]{2,20}$");
     }
-
-
 
 }
