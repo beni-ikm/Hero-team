@@ -9,6 +9,5 @@ public class Main {
 
 
         System.out.println(attributesModificator.modAlternation(3));
-
     }
 }
