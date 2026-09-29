@@ -8,7 +8,10 @@ public class HeroFactory {
 
         Name name = new Name(args.name());
 
-        return new Hero(name);
+        return new Hero(name, args.species(), args.job(),
+                args.health(), args.strength(), args.dexterity(),
+                args.intelligence(), args.constitution(), args.charisma(), args.wisdom());
+
 
     }
 

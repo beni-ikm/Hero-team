@@ -10,10 +10,8 @@ public class Name {
     public Name(String name){
 
         if (isInvalid(name)) {
-            System.out.printf("The name %s is not valid\n", name);
             throw new HeroNameInvalidException("The name "+ name +" is not valid");
         } else if (nameAlreadyUsed(name)) {
-            System.out.printf("The name ' %s ' is already in use\n", name);
             throw new HeroNameAlreadyUsedException("The name "+ name +" is already in use");
         }
 
