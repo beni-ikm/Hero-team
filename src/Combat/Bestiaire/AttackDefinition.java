@@ -1,4 +1,7 @@
 package Combat.Bestiaire;
 
-public class AttackDefinition {
-}
+public record AttackDefinition(
+    String name,
+    int bonus ,
+    String damageExpression
+){}
