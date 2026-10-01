@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class InMemoryHeroRepository implements HeroRepository {
 
-    HashMap<UUID, Hero> collection;
+    private final HashMap<UUID, Hero> collection = new HashMap<>();
 
     @Override
     public void save(Hero hero) {
@@ -17,10 +17,13 @@ public class InMemoryHeroRepository implements HeroRepository {
 
     @Override
     public Hero fetch(UUID uuid) {
-        // TODO : if not found throw new exception
-        return collection.get(uuid);
+        Hero hero = collection.get(uuid);
+        if (hero == null) {
+            throw new IllegalArgumentException("Aucun héros trouvé avec l'identifiant " + uuid);
+        }
+        return hero;
     }
-
+    
     @Override
     public boolean isNameTaken(String name){
         return false;
