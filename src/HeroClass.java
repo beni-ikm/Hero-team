@@ -1,12 +1,12 @@
-package Equipement;
+package Runtime.Equipement;
 
-import armor.ChainMailArmor;
-import armor.LeatherArmor;
-import armor.Robe;
-import weapons.Bow;
-import weapons.LongSword;
-import weapons.Mace;
-import weapons.Wand;
+import Runtime.armor.ChainMailArmor;
+import Runtime.armor.LeatherArmor;
+import Runtime.armor.Robe;
+import Runtime.weapons.Bow;
+import Runtime.weapons.LongSword;
+import Runtime.weapons.Mace;
+import Runtime.weapons.Wand;
 
     public enum HeroClass {
         WARRIOR("Guerrier"),

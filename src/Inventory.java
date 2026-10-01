@@ -1,6 +1,6 @@
-import Equipement.HeroClass;
-import Equipement.Item;
-import weapons.Weapons;
+import Runtime.Equipement.HeroClass;
+import Runtime.Equipement.Item;
+import Runtime.weapons.Weapons;
 
 import java.util.ArrayList;
 import java.util.List;

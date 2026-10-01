@@ -1,4 +1,4 @@
-import Runtime.Hero.domain.AttributesModificator;
+import Runtime.hero.domain.AttributesModificator;
 
 public class Main {
     public static void main(String[] args) {
