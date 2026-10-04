@@ -1,6 +1,4 @@
-package Runtime.Hero.domain;
-
-import Runtime.Hero.application.Create.HeroCreationCommand;
+package Runtime.hero.domain;
 
 public class HeroFactory {
 

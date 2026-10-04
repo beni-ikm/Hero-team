@@ -1,10 +1,7 @@
-package Runtime.Hero.application.Create;
+package Runtime.hero.application.Create;
 
-import Runtime.Hero.application.port.HeroRepository;
-import Runtime.Hero.domain.Hero;
-import Runtime.Hero.domain.HeroCreationArgs;
-import Runtime.Hero.domain.HeroFactory;
-import Runtime.Hero.domain.exception.HeroNameAlreadyUsedException;
+import Runtime.hero.application.port.HeroRepository;
+import Runtime.hero.domain.HeroFactory;
 
 public class HeroCreationUseCase {
 

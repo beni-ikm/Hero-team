@@ -1,7 +1,7 @@
-package Runtime.Hero.domain;
+package Runtime.hero.domain;
 
-import Runtime.Hero.domain.exception.HeroNameAlreadyUsedException;
-import Runtime.Hero.domain.exception.HeroNameInvalidException;
+import Runtime.hero.domain.exception.HeroNameAlreadyUsedException;
+import Runtime.hero.domain.exception.HeroNameInvalidException;
 
 public class Name {
 

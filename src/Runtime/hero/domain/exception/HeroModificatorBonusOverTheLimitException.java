@@ -1,4 +1,4 @@
-package Runtime.Hero.domain.exception;
+package Runtime.hero.domain.exception;
 
 // Cette exception est pour les bonus de la clase et du travail
 

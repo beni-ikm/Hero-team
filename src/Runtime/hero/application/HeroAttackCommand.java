@@ -1,4 +1,4 @@
-package Runtime.Hero.application;
+package Runtime.hero.application;
 
 public class HeroAttackCommand {
 }

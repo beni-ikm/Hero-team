@@ -1,8 +1,8 @@
-package Runtime.Hero.domain;
+package Runtime.hero.domain;
 
-import Runtime.Hero.domain.exception.HeroAttributesOverTheLimitException;
-import Runtime.Hero.domain.exception.HeroAttributesUnderTheLimitException;
-import Runtime.Hero.domain.exception.HeroModificatorBonusOverTheLimitException;
+import Runtime.hero.domain.exception.HeroAttributesOverTheLimitException;
+import Runtime.hero.domain.exception.HeroAttributesUnderTheLimitException;
+import Runtime.hero.domain.exception.HeroModificatorBonusOverTheLimitException;
 import Runtime.classes.Classes;
 import Runtime.species.Species;
 

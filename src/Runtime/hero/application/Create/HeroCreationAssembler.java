@@ -1,6 +1,4 @@
-package Runtime.Hero.application.Create;
-
-import Runtime.Hero.domain.HeroCreationArgs;
+package Runtime.hero.application.Create;
 
 public class HeroCreationAssembler {
 

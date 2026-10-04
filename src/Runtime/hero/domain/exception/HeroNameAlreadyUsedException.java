@@ -1,4 +1,4 @@
-package Runtime.Hero.domain.exception;
+package Runtime.hero.domain.exception;
 
 public class HeroNameAlreadyUsedException extends RuntimeException {
 

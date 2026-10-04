@@ -1,4 +1,4 @@
-package Runtime.Hero.domain;
+package Runtime.hero.domain;
 
 import Runtime.classes.Classes;
 import Runtime.species.Species;

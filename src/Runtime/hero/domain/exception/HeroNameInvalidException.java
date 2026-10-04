@@ -1,4 +1,4 @@
-package Runtime.Hero.domain.exception;
+package Runtime.hero.domain.exception;
 
 public class HeroNameInvalidException extends RuntimeException {
     public HeroNameInvalidException(String name) {

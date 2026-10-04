@@ -1,6 +1,6 @@
-package Runtime.Hero.application.port;
+package Runtime.hero.application.port;
 
-import Runtime.Hero.domain.Hero;
+import Runtime.hero.domain.Hero;
 
 import java.util.UUID;
 

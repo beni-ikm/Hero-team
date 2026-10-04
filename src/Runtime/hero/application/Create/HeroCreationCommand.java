@@ -1,4 +1,4 @@
-package Runtime.Hero.application.Create;
+package Runtime.hero.application.Create;
 
 public record HeroCreationCommand(String name) {
 }

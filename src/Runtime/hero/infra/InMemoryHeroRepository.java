@@ -1,7 +1,7 @@
-package Runtime.Hero.infra;
+package Runtime.hero.infra;
 
-import Runtime.Hero.application.port.HeroRepository;
-import Runtime.Hero.domain.Hero;
+import Runtime.hero.application.port.HeroRepository;
+import Runtime.hero.domain.Hero;
 
 import java.util.HashMap;
 import java.util.UUID;
