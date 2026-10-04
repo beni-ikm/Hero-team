@@ -1,4 +1,4 @@
-package Runtime.hero.infra;
+package Runtime.hero.infrastructure;
 
 import Runtime.hero.application.port.HeroRepository;
 import Runtime.hero.domain.Hero;
