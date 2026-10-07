@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Runtime/armor/ChainMailArmor.java
 package Runtime.armor;
+========
+package notusablerigthnow.armor;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/ChainMailArmor.java
 
 public class ChainMailArmor extends Armor{
 

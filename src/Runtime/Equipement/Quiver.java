@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Runtime/Equipement/Quiver.java
 package Runtime.Equipement;
+========
+package notusablerigthnow;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/Quiver.java
 
 
 public class Quiver extends Equipement {

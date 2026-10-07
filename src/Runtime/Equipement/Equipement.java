@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Runtime/Equipement/Equipement.java
 package Runtime.Equipement;
+========
+package notusablerigthnow;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/Equipement.java
 
 public abstract class Equipement {
 
