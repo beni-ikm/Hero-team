@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package Runtime.Equipement;
+=======
+package Runtime.equipementpackage;
+>>>>>>> 1618374 (WIP)
 
 import Runtime.armor.ChainMailArmor;
 import Runtime.armor.LeatherArmor;
