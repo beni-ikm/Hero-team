@@ -1,4 +1,4 @@
-package Runtime.Combat;
+package Runtime.combat;
 
 public interface Combatant {
     String getId();

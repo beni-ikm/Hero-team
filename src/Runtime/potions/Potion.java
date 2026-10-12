@@ -1,6 +1,6 @@
 package Runtime.potions;
 
-import Runtime.Equipement.Equipement;
+import Runtime.equipment.Equipement;
 
 public abstract class Potion extends Equipement {
 

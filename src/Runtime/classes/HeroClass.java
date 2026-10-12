@@ -1,6 +1,6 @@
 package Runtime.classes;
 
-import Runtime.Equipement.Quiver;
+import Runtime.equipment.Quiver;
 import Runtime.armor.ChainMailArmor;
 import Runtime.armor.LeatherArmor;
 import Runtime.armor.Robe;

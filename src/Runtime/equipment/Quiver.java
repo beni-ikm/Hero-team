@@ -1,4 +1,4 @@
-package Runtime.Equipement;
+package Runtime.equipment;
 
 
 public class Quiver extends Equipement {

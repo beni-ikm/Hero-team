@@ -1,4 +1,4 @@
-package Runtime.Combat;
+package Runtime.combat;
 
 import java.util.ArrayList;
 import java.util.Comparator;

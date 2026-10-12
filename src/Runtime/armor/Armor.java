@@ -1,6 +1,6 @@
 package Runtime.armor;
 
-import Runtime.Equipement.Equipement;
+import Runtime.equipment.Equipement;
 
 public abstract class Armor extends Equipement {
 

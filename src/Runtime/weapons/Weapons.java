@@ -1,6 +1,6 @@
 package Runtime.weapons;
 
-import Runtime.Equipement.Equipement;
+import Runtime.equipment.Equipement;
 
 public abstract class Weapons extends Equipement implements AttackBehavior {
 

@@ -1,5 +1,5 @@
 import Runtime.classes.HeroClass;
-import Runtime.Equipement.Item;
+import Runtime.equipment.Item;
 import Runtime.weapons.Weapons;
 
 import java.util.ArrayList;

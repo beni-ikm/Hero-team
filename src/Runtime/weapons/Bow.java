@@ -1,6 +1,6 @@
 package Runtime.weapons;
 
-import Runtime.Equipement.Quiver;
+import Runtime.equipment.Quiver;
 
 public class Bow extends Weapons {
 

@@ -1,4 +1,4 @@
-package Runtime.Combat;
+package Runtime.combat;
 
 public class AttackResolver {
 
