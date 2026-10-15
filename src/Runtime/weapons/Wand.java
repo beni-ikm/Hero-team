@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Runtime/weapons/Wand.java
 package Runtime.weapons;
+========
+package notusablerigthnow.weapons;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/weapons/Wand.java
 
 public class Wand extends Weapons {
 

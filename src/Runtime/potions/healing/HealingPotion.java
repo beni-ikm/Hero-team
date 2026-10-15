@@ -1,7 +1,14 @@
+<<<<<<<< HEAD:src/Runtime/potions/healing/HealingPotion.java
 package Runtime.potions.healing;
 
 import Runtime.potions.Potion;
 import Runtime.potions.PotionLevel;
+========
+package notusablerigthnow.potions.healing;
+
+import notusablerigthnow.potions.Potion;
+import notusablerigthnow.potions.PotionLevel;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/potions/healing/HealingPotion.java
 
 
 public class HealingPotion extends Potion {

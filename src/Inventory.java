@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import Runtime.Equipement.HeroClass;
 import Runtime.Equipement.Item;
 import Runtime.weapons.Weapons;
+=======
+import Runtime.equipementpackage.HeroClass;
+import Runtime.equipementpackage.Item;
+import notusablerigthnow.weapons.Weapons;
+>>>>>>> 1618374 (WIP)
 
 import java.util.ArrayList;
 import java.util.List;

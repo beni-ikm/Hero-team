@@ -1,7 +1,14 @@
+<<<<<<<< HEAD:src/Runtime/potions/mana/ManaPotion.java
 package Runtime.potions.mana;
 
 import Runtime.potions.Potion;
 import Runtime.potions.PotionLevel;
+========
+package notusablerigthnow.potions.mana;
+
+import notusablerigthnow.potions.Potion;
+import notusablerigthnow.potions.PotionLevel;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/potions/mana/ManaPotion.java
 
 public class ManaPotion extends Potion {
 

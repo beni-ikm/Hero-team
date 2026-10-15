@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="jakarta.platform.jakartaee.web.api" type="repository">
+    <properties maven-id="jakarta.platform:jakarta.jakartaee-web-api:10.0.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.jakartaee-web-api-10.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.servlet-api-6.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.servlet.jsp-api-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.el-api-5.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.faces-api-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.ws.rs-api-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.websocket-api-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.websocket-client-api-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.json-api-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.json.bind-api-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.annotation-api-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.ejb-api-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.transaction-api-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.persistence-api-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.validation-api-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.interceptor-api-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.enterprise.cdi-api-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.enterprise.lang-model-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.inject-api-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.authentication-api-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.security.enterprise-api-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

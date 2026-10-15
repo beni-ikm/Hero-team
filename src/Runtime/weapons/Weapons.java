@@ -1,6 +1,12 @@
+<<<<<<<< HEAD:src/Runtime/weapons/Weapons.java
 package Runtime.weapons;
 
 import Runtime.Equipement.Equipement;
+========
+package notusablerigthnow.weapons;
+
+import notusablerigthnow.Equipement;
+>>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/weapons/Weapons.java
 
 public abstract class Weapons extends Equipement implements AttackBehavior {
 
