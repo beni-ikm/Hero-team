@@ -5,14 +5,14 @@ import runtime.equipment.domain.partofequipment.*;
 
 public class EquipmentPersistenceMapper {
 
-    public EquipmentPersistenceModel toPersistence(Equipment equipement){
+    public EquipmentPersistenceModel toPersistence(Equipment equipment){
         return new EquipmentPersistenceModel(
-                equipement.id().value(),
-                equipement.playerId().value(),
-                equipement.templateId().value(),
-                equipement.equipementType().value(),
-                equipement.name().value(),
-                equipement.weight().value()
+                equipment.id().value(),
+                equipment.playerId().value(),
+                equipment.templateId().value(),
+                equipment.equipmentType().value(),
+                equipment.name().value(),
+                equipment.weight().value()
         );
     }
 
