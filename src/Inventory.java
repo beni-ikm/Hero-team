@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import runtime.equipment.HeroClass;
-import runtime.equipment.Item;
+import runtime.equipment.domain.Equipment;
 import runtime.weapons.Weapons;
-=======
-import notusablerigthnow.weapons.Weapons;
->>>>>>> 1618374 (WIP)
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +11,7 @@ public class Inventory {
     private static final short ABSOLUTE_MAX_SLOTS = 20;
 
     private short maxItemSlots;
-    private final List<Item> inventory;
+    private final List<Equipment> inventory;
     private Weapons equippedWeapon;
 
     public Inventory(short maxItemSlots) {
@@ -47,7 +42,7 @@ public class Inventory {
     }
 
 
-    public void equipWeapon(Item item, HeroClass heroClass) {
+    public void equipWeapon(Equipment item, HeroClass heroClass) {
         Objects.requireNonNull(item, "L'objet ne peut pas être nul.");
         Objects.requireNonNull(heroClass, "La classe du héros ne peut pas être nulle.");
 
@@ -69,11 +64,11 @@ public class Inventory {
         this.equippedWeapon = weapon;
     }
 
-    public List<Item> getInventory() {
+    public List<Equipment> getInventory() {
         return new ArrayList<>(this.inventory);
     }
 
-    public void addItem(Item item) {
+    public void addItem(Equipment item) {
         Objects.requireNonNull(item, "L'objet ne peut pas être nul.");
         if (this.inventory.size() >= this.maxItemSlots) {
             System.out.printf("Inventaire plein! Capacité actuelle: %d/%d%n", this.inventory.size(), this.maxItemSlots);
