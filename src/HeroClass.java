@@ -1,16 +1,16 @@
 <<<<<<< HEAD
-package Runtime.Equipement;
+package runtime.Equipement;
 =======
-package Runtime.equipementpackage;
+package runtime.equipementpackage;
 >>>>>>> 1618374 (WIP)
 
-import Runtime.armor.ChainMailArmor;
-import Runtime.armor.LeatherArmor;
-import Runtime.armor.Robe;
-import Runtime.weapons.Bow;
-import Runtime.weapons.LongSword;
-import Runtime.weapons.Mace;
-import Runtime.weapons.Wand;
+import runtime.armor.ChainMailArmor;
+import runtime.armor.LeatherArmor;
+import runtime.armor.Robe;
+import runtime.weapons.Bow;
+import runtime.weapons.LongSword;
+import runtime.weapons.Mace;
+import runtime.weapons.Wand;
 
     public enum HeroClass {
         WARRIOR("Guerrier"),

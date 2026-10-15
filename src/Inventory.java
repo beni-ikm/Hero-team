@@ -1,10 +1,10 @@
 <<<<<<< HEAD
-import Runtime.Equipement.HeroClass;
-import Runtime.Equipement.Item;
-import Runtime.weapons.Weapons;
+import runtime.Equipement.HeroClass;
+import runtime.Equipement.Item;
+import runtime.weapons.Weapons;
 =======
-import Runtime.equipementpackage.HeroClass;
-import Runtime.equipementpackage.Item;
+import runtime.equipementpackage.HeroClass;
+import runtime.equipementpackage.Item;
 import notusablerigthnow.weapons.Weapons;
 >>>>>>> 1618374 (WIP)
 
