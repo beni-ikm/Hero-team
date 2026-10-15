@@ -1,19 +1,20 @@
-<<<<<<<< HEAD:src/Runtime/potions/Potion.java
 package runtime.potions;
 
-import runtime.Equipement.Equipement;
-========
-package notusablerigthnow.potions;
+import runtime.equipment.domain.Equipment;
+import runtime.equipment.domain.partofequipment.*;
 
-import notusablerigthnow.Equipement;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/potions/Potion.java
-
-public abstract class Potion extends Equipement {
+public abstract class Potion extends Equipment {
 
     private PotionLevel potionLevel;
 
-    public Potion(String equipementName, PotionLevel potionLevel) {
-        super(equipementName);
+    public Potion(EquipmentId id,
+                  PlayerId playerId,
+                  EquipmentTemplateId templateId,
+                  EquipmentType equipmentType,
+                  EquipmentName equipmentName,
+                  PotionLevel potionLevel,
+                  EquipmentWeight weight) {
+        super(id, playerId, templateId, equipmentType, equipmentName, weight);
         this.potionLevel = potionLevel;
     }
 

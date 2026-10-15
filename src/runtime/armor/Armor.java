@@ -1,19 +1,20 @@
-<<<<<<<< HEAD:src/Runtime/armor/Armor.java
 package runtime.armor;
 
-import runtime.Equipement.Equipement;
-========
-package notusablerigthnow.armor;
+import runtime.equipment.domain.Equipment;
+import runtime.equipment.domain.partofequipment.*;
 
-import notusablerigthnow.Equipement;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/Armor.java
-
-public abstract class Armor extends Equipement {
+public abstract class Armor extends Equipment {
 
     private int defence;
 
-    public Armor(String name, int defence){
-        super(name);
+    public Armor(EquipmentId id,
+                 PlayerId playerId,
+                 EquipmentTemplateId templateId,
+                 EquipmentType equipmentType,
+                 EquipmentName name,
+                 EquipmentWeight weight,
+                 int defence){
+        super(id, playerId, templateId, equipmentType, name, weight);
         this.defence = defence;
     }
 

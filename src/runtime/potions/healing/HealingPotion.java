@@ -1,21 +1,13 @@
-<<<<<<<< HEAD:src/Runtime/potions/healing/HealingPotion.java
 package runtime.potions.healing;
 
 import runtime.potions.Potion;
 import runtime.potions.PotionLevel;
-========
-package notusablerigthnow.potions.healing;
-
-import notusablerigthnow.potions.Potion;
-import notusablerigthnow.potions.PotionLevel;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/potions/healing/HealingPotion.java
-
 
 public class HealingPotion extends Potion {
 
     private int heal;
 
-    public HealingPotion(String equipementName, PotionLevel potionLevel) {
+    public HealingPotion(String equipmentName, PotionLevel potionLevel) {
         super(potionName(potionLevel), potionLevel);
         this.heal = getHealAmount(potionLevel);
     }

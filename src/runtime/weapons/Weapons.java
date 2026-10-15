@@ -1,19 +1,20 @@
-<<<<<<<< HEAD:src/Runtime/weapons/Weapons.java
 package runtime.weapons;
 
-import runtime.Equipement.Equipement;
-========
-package notusablerigthnow.weapons;
+import runtime.equipment.domain.Equipment;
+import runtime.equipment.domain.partofequipment.*;
 
-import notusablerigthnow.Equipement;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/weapons/Weapons.java
-
-public abstract class Weapons extends Equipement implements AttackBehavior {
+public abstract class Weapons extends Equipment implements AttackBehavior {
 
     private int damage;
 
-    public Weapons(String name, int damage) {
-        super(name);
+    public Weapons(EquipmentId id,
+                   PlayerId playerId,
+                   EquipmentTemplateId templateId,
+                   EquipmentType equipmentType,
+                   EquipmentName armorName,
+                   EquipmentWeight weight,
+                   int damage) {
+        super(id, playerId, templateId, equipmentType, armorName, weight);
         this.damage = damage;
     }
 

@@ -1,23 +1,22 @@
-<<<<<<<< HEAD:src/Runtime/armor/LeatherArmor.java
 package runtime.armor;
-========
-package notusablerigthnow.armor;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/LeatherArmor.java
+
+import runtime.equipment.domain.partofequipment.*;
 
 public class LeatherArmor extends Armor {
 
     public int dexterityBonus;
     public int charismaBonus;
 
-    public LeatherArmor(String armorName, int defence) {
-<<<<<<<< HEAD:src/Runtime/armor/LeatherArmor.java
-        super("Leather Runtime.armor", 6);
-========
-        super("Leather Runtime.Equipement.armor", 6);
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/LeatherArmor.java
+    public LeatherArmor(EquipmentId id,
+                        PlayerId playerId,
+                        EquipmentTemplateId templateId,
+                        EquipmentType equipmentType,
+                        EquipmentName armorName,
+                        EquipmentWeight weight,
+                        int defence) {
+        super(id, playerId, templateId, equipmentType, armorName, weight, defence);
         this.charismaBonus = 8;
         this.dexterityBonus = 6;
-
     }
 
     @Override

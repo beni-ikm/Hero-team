@@ -1,16 +1,20 @@
-<<<<<<<< HEAD:src/Runtime/armor/ChainMailArmor.java
 package runtime.armor;
-========
-package notusablerigthnow.armor;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/ChainMailArmor.java
+
+import runtime.equipment.domain.partofequipment.*;
 
 public class ChainMailArmor extends Armor{
 
     public int strengthBonus;
     public int constitutionBonus;
 
-    public ChainMailArmor(String armorName, int defence) {
-        super("Chain Mail", 10);
+    public ChainMailArmor(EquipmentId id,
+                          PlayerId playerId,
+                          EquipmentTemplateId templateId,
+                          EquipmentType equipmentType,
+                          EquipmentName armorName,
+                          EquipmentWeight weight,
+                          int defence) {
+        super(id, playerId, templateId, equipmentType, armorName, weight, defence);
         this.constitutionBonus = 5;
         this.strengthBonus = 4;
     }

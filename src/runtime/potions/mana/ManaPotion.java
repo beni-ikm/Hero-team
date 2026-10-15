@@ -1,20 +1,13 @@
-<<<<<<<< HEAD:src/Runtime/potions/mana/ManaPotion.java
 package runtime.potions.mana;
 
 import runtime.potions.Potion;
 import runtime.potions.PotionLevel;
-========
-package notusablerigthnow.potions.mana;
-
-import notusablerigthnow.potions.Potion;
-import notusablerigthnow.potions.PotionLevel;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/potions/mana/ManaPotion.java
 
 public class ManaPotion extends Potion {
 
     private int manaRestore;
 
-    public ManaPotion(String equipementName, PotionLevel potionLevel) {
+    public ManaPotion(String equipmentName, PotionLevel potionLevel) {
         super(potionName(potionLevel), potionLevel);
         this.manaRestore = getManaPotionAmount(potionLevel);
     }

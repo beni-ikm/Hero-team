@@ -1,16 +1,20 @@
-<<<<<<<< HEAD:src/Runtime/armor/Robe.java
 package runtime.armor;
-========
-package notusablerigthnow.armor;
->>>>>>>> 26fca02 (refactor(equipement): restructure package equipement to be more inline with DDD):src/notusablerigthnow/armor/Robe.java
+
+import runtime.equipment.domain.partofequipment.*;
 
 public class Robe extends Armor {
 
     public int intelligenceBonus;
     public int wisdomBonus;
 
-    public Robe(String armorName, int defence) {
-        super("Robe", 4);
+    public Robe(EquipmentId id,
+                PlayerId playerId,
+                EquipmentTemplateId templateId,
+                EquipmentType equipmentType,
+                EquipmentName armorName,
+                EquipmentWeight weight,
+                int defence) {
+        super(id, playerId, templateId, equipmentType, armorName, weight, defence);
         this.intelligenceBonus = 10;
         this.wisdomBonus = 8;
     }
