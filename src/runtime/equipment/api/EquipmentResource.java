@@ -53,9 +53,9 @@ public class EquipmentResource {
     }
 
     @GET
-    @Path("{id}")
+    @Path("{Player-Id}")
     public Response getEquipment(
-            @HeaderParam("Player") @NotNull String playerId,
+            @HeaderParam("Player-Id") @NotNull String playerId,
             @PathParam("id") String equipementId){
 
         GetEquipmentQuery query = new GetEquipmentQuery(equipementId, playerId);
