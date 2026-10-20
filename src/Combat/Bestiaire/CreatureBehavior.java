@@ -1,4 +1,8 @@
 package Combat.Bestiaire;
 
-public class CreatureBehavior {
+import Combat.Combatant;
+import java.util.List;
+
+public interface CreatureBehavior {
+    Combatant chooseTarget(List<Combatant> candidates);
 }

@@ -22,4 +22,8 @@ public interface Combatant {
 
     int getStatModifier(String statName);
     int getProficiencyBonus();
+
+    default int getCurrentHitPoints() {
+        return 0;
+    }
 }
