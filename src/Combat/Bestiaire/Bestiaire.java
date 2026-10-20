@@ -1,5 +1,6 @@
 package Combat.Bestiaire;
 
+import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -51,6 +52,16 @@ public class Bestiaire {
     public Creature creerCreature(String nom, String identifiant) {
         CreatureDefinition definition = obtenirDefinition(nom);
         return new Creature(identifiant, definition);
+    }
+
+    public void chargerDepuisFichierJson(Path chemin) {
+        BestiaireJsonLoader.chargerDansBestiaire(this, chemin);
+    }
+
+    public void chargerDepuisJson(String json) {
+        for (CreatureDefinition def : BestiaireJsonLoader.chargerDepuisJson(json)) {
+            enregistrer(def);
+        }
     }
 
     public void vider() {
