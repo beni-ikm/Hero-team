@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Gobelin",
+    "maxHitPoints": 7,
+    "armorClass": 12,
+    "initiativeBonus": 2,
+    "experiencePoints": 50,
+    "attack": {
+      "name": "Dague rouillée",
+      "bonus": 3,
+      "damageExpression": "1d6 + 1"
+    },
+    "behaviorType": "WEAKEST_HERO"
+  },
+  {
+    "name": "Orc",
+    "maxHitPoints": 15,
+    "armorClass": 13,
+    "initiativeBonus": 1,
+    "experiencePoints": 100,
+    "attack": {
+      "name": "Hache",
+      "bonus": 4,
+      "damageExpression": "1d8 + 2"
+    },
+    "behaviorType": "STRONGEST_HERO"
+  },
+  {
+    "name": "Troll",
+    "maxHitPoints": 35,
+    "armorClass": 15,
+    "initiativeBonus": 0,
+    "experiencePoints": 300,
+    "attack": {
+      "name": "Massue",
+      "bonus": 6,
+      "damageExpression": "2d6 + 3"
+    },
+    "behaviorType": "RANDOM_HERO"
+  }
+]
