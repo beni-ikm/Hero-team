@@ -78,13 +78,8 @@
     </dependencies>
 
     <build>
-        <!--
-            On FIXE la version de chaque plugin Maven utilisé par le cycle de vie
-            (clean, compile, test, package, install).
-            Sans ça, Maven prend les versions par défaut de SA propre installation : le build
-            dépend alors de la machine (IntelliJ, poste de l'étudiant, CI...) et certaines
-            anciennes versions affichent des avertissements. Versions fixées = build reproductible.
-        -->
+        <sourceDirectory>src</sourceDirectory>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -131,7 +126,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
-                    <mainClass>restalo.Main</mainClass>
+                    <mainClass>Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
