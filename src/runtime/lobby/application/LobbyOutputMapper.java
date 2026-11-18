@@ -1,7 +1,6 @@
 package runtime.lobby.application;
 
 import runtime.lobby.domain.Lobby;
-import runtime.lobby.domain.partOfLobby.PlayerId;
 
 import java.util.List;
 

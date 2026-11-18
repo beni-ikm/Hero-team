@@ -2,6 +2,8 @@ package runtime.lobby.infrastructure;
 
 import runtime.lobby.domain.Lobby;
 import runtime.lobby.domain.LobbyRepository;
+import runtime.lobby.domain.exception.LobbyNotFoundException;
+import runtime.lobby.domain.partOfLobby.LobbyId;
 import runtime.lobby.domain.partOfLobby.PlayerId;
 
 import java.util.Map;
@@ -34,5 +36,14 @@ public class InMemoryLobbyRepository implements LobbyRepository {
         return lobbies.values().stream()
                 .anyMatch(lobby -> lobby.open()
                 && lobby.members().contains(playerId.value()));
+    }
+
+    @Override
+    public Lobby fetchById(LobbyId lobbyId) {
+        LobbyPersistenceModel model = lobbies.get(lobbyId.value());
+        if(model == null) {
+            throw new LobbyNotFoundException(lobbyId);
+        }
+        return persistenceMapper.toDomain(model);
     }
 }
