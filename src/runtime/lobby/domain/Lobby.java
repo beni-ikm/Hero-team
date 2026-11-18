@@ -5,6 +5,7 @@ import runtime.lobby.domain.partOfLobby.LobbyId;
 import runtime.lobby.domain.partOfLobby.LobbyStatus;
 import runtime.lobby.domain.partOfLobby.PlayerId;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lobby {
@@ -19,7 +20,7 @@ public class Lobby {
     public Lobby(LobbyId id, PlayerId host, List<PlayerId> members, LobbyStatus status) {
         this.id = id;
         this.host = host;
-        this.members = members;
+        this.members = new ArrayList<>(members);
         this.status = status;
     }
 
