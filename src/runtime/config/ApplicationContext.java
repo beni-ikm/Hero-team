@@ -3,6 +3,7 @@ package runtime.config;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import runtime.equipment.EquipmentInstaller;
+import runtime.lobby.LobbyInstaller;
 
 public class ApplicationContext {
 
@@ -15,6 +16,9 @@ public class ApplicationContext {
 
         EquipmentInstaller equipmentInstaller = new EquipmentInstaller();
         equipmentInstaller.install(resourceConfig);
+
+        LobbyInstaller lobbyInstaller = new LobbyInstaller();
+        lobbyInstaller.install(resourceConfig);
 
         return resourceConfig;
     }
