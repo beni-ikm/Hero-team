@@ -1,24 +1,28 @@
 package runtime.hero.domain;
 
-public class Name {
+import runtime.hero.domain.exception.HeroNameAlreadyUsedException;
+import runtime.hero.domain.exception.HeroNameIsEmptyException;
+import runtime.hero.domain.exception.HeroNameIsTooLongException;
+import runtime.hero.domain.exception.HeroNameIsTooShortException;
 
-    private String name;
+public record Name(String name) {
 
-    public Name(String name){
+    public Name{
 
         if (isInvalid(name)) {
-            System.out.println("This name is not valid");
+            throw new HeroNameAlreadyUsedException();
         }
-
-        this.name = name;
-
+        if(name.length() < 3) {
+            throw new HeroNameIsTooShortException();
+        }
+        if (name.length() > 20) {
+            throw new HeroNameIsTooLongException();
+        }
     }
 
     public boolean isInvalid(String input) {
-        // Rend vrai si l'entrée est nulle, vide, fait moins de 2 caractères,
-        // plus de 20 caractères, ou contient autre chose que des lettres.
         if (input == null || input.isEmpty()) {
-            return true;
+            throw new HeroNameIsEmptyException();
         }
         return !input.matches("^[a-zA-Z]{2,20}$");
     }
