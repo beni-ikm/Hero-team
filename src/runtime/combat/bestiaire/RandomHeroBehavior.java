@@ -1,7 +1,9 @@
 package runtime.combat.bestiaire;
 
 import runtime.combat.Combatant;
+
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 public class RandomHeroBehavior implements CreatureBehavior {
@@ -12,22 +14,14 @@ public class RandomHeroBehavior implements CreatureBehavior {
     }
 
     public RandomHeroBehavior(Random random) {
+        if (random == null) {
+            throw new DefinitionCreatureInvalideException("Le générateur aléatoire est obligatoire.");
+        }
         this.random = random;
     }
 
     @Override
-    public Combatant chooseTarget(List<Combatant> candidates) {
-        List<Combatant> validHeroes = candidates.stream()
-            .filter(c -> c.isHero() && !c.isKnockedOut())
-            .toList();
-
-        if (validHeroes.isEmpty()) {
-            return candidates.stream()
-                .filter(c -> !c.isKnockedOut())
-                .findFirst()
-                .orElse(null);
-        }
-
-        return validHeroes.get(random.nextInt(validHeroes.size()));
+    public Optional<Combatant> chooseTarget(List<Combatant> candidates) {
+        return ActiveHeroes.among(candidates).pickedAtRandom(random);
     }
 }

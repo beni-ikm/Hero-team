@@ -1,18 +1,13 @@
 package runtime.combat.bestiaire;
 
 import runtime.combat.Combatant;
-import java.util.Comparator;
+
 import java.util.List;
+import java.util.Optional;
 
 public class StrongestHeroBehavior implements CreatureBehavior {
     @Override
-    public Combatant chooseTarget(List<Combatant> candidates) {
-        return candidates.stream()
-            .filter(c -> c.isHero() && !c.isKnockedOut())
-            .max(Comparator.comparingInt(Combatant::getCurrentHitPoints))
-            .orElseGet(() -> candidates.stream()
-                .filter(c -> !c.isKnockedOut())
-                .findFirst()
-                .orElse(null));
+    public Optional<Combatant> chooseTarget(List<Combatant> candidates) {
+        return ActiveHeroes.among(candidates).withHighestHitPoints();
     }
 }

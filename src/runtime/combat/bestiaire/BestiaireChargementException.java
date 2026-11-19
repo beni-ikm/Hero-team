@@ -1,6 +1,6 @@
 package runtime.combat.bestiaire;
 
-public class BestiaireChargementException extends RuntimeException {
+public class BestiaireChargementException extends BestiaireException {
     public BestiaireChargementException(String message) {
         super(message);
     }
