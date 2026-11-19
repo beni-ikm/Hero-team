@@ -1,17 +1,17 @@
 package runtime.lobby.domain.partOfLobby;
 
-public record LobbyStatus(boolean open){
+public record LobbyStatus(boolean value){
 
-    public static LobbyStatus opened() {
+    public static LobbyStatus open() {
         return new LobbyStatus(true);
     }
 
-    public static LobbyStatus closed() {
+    public static LobbyStatus close() {
         return new LobbyStatus(false);
     }
 
-    public String value() {
-        return open ? "OPEN" : "CLOSED";
+    public String valueToString() {
+        return value ? "OPEN" : "CLOSED";
     }
 
 }

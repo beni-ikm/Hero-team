@@ -12,7 +12,7 @@ public record LobbyOutput(
 
     public record PlayerOutput(
             String playerId,
-            String pseudonym,
+            String nickname,
             HeroOutput hero
     ) {}
 

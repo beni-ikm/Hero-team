@@ -7,11 +7,11 @@ import runtime.lobby.domain.exception.LobbyException;
 
 public class LobbyExceptionMapper implements ExceptionMapper<LobbyException> {
 
-    private static final int CONFLICT = 409;
+    private static final int ALREADY_IN_LOBBY = 409;
 
     @Override
     public Response toResponse(LobbyException e) {
-        return Response.status(CONFLICT)
+        return Response.status(ALREADY_IN_LOBBY)
                 .type(MediaType.APPLICATION_JSON)
                 .entity(new ErrorResponse(e.getMessage()))
                 .build();

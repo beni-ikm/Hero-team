@@ -3,7 +3,7 @@ package runtime.lobby;
 import org.glassfish.jersey.server.ResourceConfig;
 import runtime.lobby.api.LobbyExceptionMapper;
 import runtime.lobby.api.LobbyResponseMapper;
-import runtime.lobby.api.LobbyRessource;
+import runtime.lobby.api.LobbyResource;
 import runtime.lobby.application.CreateLobbyUseCase;
 import runtime.lobby.application.LobbyOutputMapper;
 import runtime.lobby.domain.LobbyFactory;
@@ -31,8 +31,8 @@ public class LobbyInstaller {
                         outputMapper);
 
 
-        LobbyRessource lobbyResource =
-                new LobbyRessource(
+        LobbyResource lobbyResource =
+                new LobbyResource(
                         createLobbyUseCase,
                         new LobbyResponseMapper()
                 );

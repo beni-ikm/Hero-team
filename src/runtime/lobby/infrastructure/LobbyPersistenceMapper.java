@@ -15,7 +15,7 @@ public class LobbyPersistenceMapper {
                 lobby.members().stream()
                         .map(PlayerId::value)
                         .toList(),
-                lobby.status().value().equals("OPEN")
+                lobby.status().valueToString().equals("OPEN")
         );
     }
 
@@ -27,7 +27,7 @@ public class LobbyPersistenceMapper {
                 model.members().stream()
                         .map(PlayerId::new)
                         .toList(),
-                model.open() ? LobbyStatus.opened() : LobbyStatus.closed()
+                model.open() ? LobbyStatus.open() : LobbyStatus.close()
         );
     }
 

@@ -13,7 +13,7 @@ public class LobbyResponseMapper {
             output.players().stream()
                     .map(player -> new LobbyResponse.LobbyPlayerResponse(
                             player.playerId(),
-                            player.pseudonym(),
+                            player.nickname(),
                             player.hero() == null
                                     ? null : new LobbyResponse.HeroResponse(
                                     player.hero().id(),

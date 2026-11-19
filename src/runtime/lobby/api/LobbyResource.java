@@ -15,12 +15,12 @@ import java.net.URI;
 @Path("/lobbies")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class LobbyRessource {
+public class LobbyResource {
 
     private final CreateLobbyUseCase createLobbyUseCase;
     private final LobbyResponseMapper responseMapper;
 
-    public LobbyRessource(CreateLobbyUseCase lobbyUseCase, LobbyResponseMapper responseMapper) {
+    public LobbyResource(CreateLobbyUseCase lobbyUseCase, LobbyResponseMapper responseMapper) {
         this.createLobbyUseCase = lobbyUseCase;
         this.responseMapper = responseMapper;
     }
@@ -33,7 +33,7 @@ public class LobbyRessource {
 
         CreateLobbyCommand command = new CreateLobbyCommand(playerId);
 
-        LobbyOutput output = createLobbyUseCase.excute(command);
+        LobbyOutput output = createLobbyUseCase.execute(command);
 
         LobbyResponse response = responseMapper.toResponse(output);
 

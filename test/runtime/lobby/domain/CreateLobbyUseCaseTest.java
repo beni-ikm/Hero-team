@@ -30,17 +30,17 @@ public class CreateLobbyUseCaseTest {
             );
 
     @Test
-    void multipleLobby_SameOwner_isRefused(){
+    void multipleLobbies_SameOwner_isRefused(){
 
         PlayerId playerId = new PlayerId("p-7f3a");
 
         CreateLobbyCommand command = new CreateLobbyCommand(playerId.value());
 
-        createLobbyUseCase.excute(command);
+        createLobbyUseCase.execute(command);
 
         assertThrows(
                 AlreadyInLobbyException.class,
-                () -> createLobbyUseCase.excute(command)
+                () -> createLobbyUseCase.execute(command)
         );
 
 

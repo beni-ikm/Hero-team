@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LobbyOutputMapper {
 
-    public LobbyOutput toOutPut(Lobby lobby){
+    public LobbyOutput toOutput(Lobby lobby){
 
         List<LobbyOutput.PlayerOutput> players = lobby.members().stream()
                 .map(playerId -> new LobbyOutput.PlayerOutput(
@@ -18,7 +18,7 @@ public class LobbyOutputMapper {
 
         return new LobbyOutput(
                 lobby.id().value(),
-                lobby.status().value(),
+                lobby.status().valueToString(),
                 lobby.host().value(),
                 players,
                 lobby.availableSeats()

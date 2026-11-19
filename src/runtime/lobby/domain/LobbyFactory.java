@@ -14,10 +14,10 @@ public class LobbyFactory {
                 LobbyId.generate(),
                 playerId,
                 List.of(playerId),
-                LobbyStatus.opened()
+                LobbyStatus.open()
         );
 
-    };
+    }
 
 
 }

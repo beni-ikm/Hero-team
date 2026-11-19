@@ -22,7 +22,7 @@ public class CreateLobbyUseCase {
         this.outputMapper = outputMapper;
     }
 
-    public LobbyOutput excute(CreateLobbyCommand command){
+    public LobbyOutput execute(CreateLobbyCommand command){
 
         PlayerId playerId = new PlayerId(command.playerId());
 
@@ -34,6 +34,6 @@ public class CreateLobbyUseCase {
 
         lobbyRepository.save(lobby);
 
-        return outputMapper.toOutPut(lobby);
+        return outputMapper.toOutput(lobby);
     }
 }

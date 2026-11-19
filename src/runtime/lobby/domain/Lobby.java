@@ -28,7 +28,7 @@ public class Lobby {
 
     public PlayerId host() {return host;}
 
-    public List<PlayerId> members() {return members;}
+    public List<PlayerId> members() {return List.copyOf(members); }
 
     public LobbyStatus status() {return status;}
 
