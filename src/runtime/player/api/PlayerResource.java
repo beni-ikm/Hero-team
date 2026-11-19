@@ -19,18 +19,12 @@ public class PlayerResource {
 
     private final CreatePlayerUseCase createAccountUseCase;
     private final CreatePlayerRequestMapper requestMapper;
-    private final GetPlayerUseCase getPlayerUseCase;
-    private final PlayerResponseMapper responseMapper;
 
     public PlayerResource(
             CreatePlayerUseCase createAccountUseCase,
-            CreatePlayerRequestMapper requestMapper,
-            GetPlayerUseCase getPlayerUseCase,
-            PlayerResponseMapper responseMapper) {
+            CreatePlayerRequestMapper requestMapper) {
         this.createAccountUseCase = createAccountUseCase;
         this.requestMapper = requestMapper;
-        this.getPlayerUseCase = getPlayerUseCase;
-        this.responseMapper = responseMapper;
     }
 
     @POST
@@ -46,20 +40,4 @@ public class PlayerResource {
         URI location = uriInfo.getAbsolutePathBuilder().path(account.id()).build();
         return Response.created(location).build();
     }
-
-    @GET
-    @Path("{id}")
-    public Response getAccount(
-            @HeaderParam("Pseudonym") @NotNull String userId,
-            @PathParam("id") String accountId) {
-
-        GetPlayerQuery query = new GetPlayerQuery(accountId, userId);
-        PlayerOutput account = getPlayerUseCase.execute(query);
-
-        return Response.ok(responseMapper.toResponse(account)).build();
-
-    }
-
-
-
 }

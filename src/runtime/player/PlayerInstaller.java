@@ -4,8 +4,6 @@ import org.glassfish.jersey.server.ResourceConfig;
 import runtime.player.api.*;
 import runtime.player.application.PlayerOutputMapper;
 import runtime.player.application.CreatePlayerUseCase;
-import runtime.player.application.GetPlayerUseCase;
-import runtime.player.domain.PlayerFactory;
 import runtime.player.domain.PlayerRepository;
 import runtime.player.infrastructure.PlayerPersistenceMapper;
 import runtime.player.infrastructure.InMemoryPlayerRepository;
@@ -24,19 +22,14 @@ public class PlayerInstaller {
                 new PlayerOutputMapper();
         CreatePlayerUseCase createAccountUseCase =
                 new CreatePlayerUseCase(
-                        new PlayerFactory(), playerRepository, outputMapper);
-        GetPlayerUseCase getPlayerUseCase =
-                new GetPlayerUseCase(playerRepository, outputMapper);
+                        playerRepository, outputMapper);
 
         resourceConfig.register(
                 new PlayerResource(
                         createAccountUseCase,
-                        new CreatePlayerRequestMapper(),
-                        getPlayerUseCase,
-                        new PlayerResponseMapper()));
+                        new CreatePlayerRequestMapper()));
 
         resourceConfig.register(new PlayerExceptionMapper());
-        resourceConfig.register(new PlayerNotFoundExceptionMapper());
     }
 
 }
