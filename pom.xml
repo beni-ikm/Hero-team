@@ -44,6 +44,12 @@
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-bean-validation</artifactId>
         </dependency>
+        <!-- Installation Argon2 pour encripter les mots de passes -->
+        <dependency>
+            <groupId>de.mkammerer</groupId>
+            <artifactId>argon2-jvm</artifactId>
+            <version>2.12</version>
+        </dependency>
 
         <!-- Tests -->
         <dependency>
