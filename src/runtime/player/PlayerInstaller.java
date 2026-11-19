@@ -55,4 +55,5 @@ public class PlayerInstaller {
         resourceConfig.register(new PlayerExceptionMapper());
         resourceConfig.register(new PlayerNotFoundExceptionMapper());
     }
+
 }

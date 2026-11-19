@@ -1,7 +1,7 @@
 package runtime.player.application;
 
 public record CreatePlayerCommand(
-        String playerUserId,
+        String playerId,
         String pseudonym,
         String email,
         String password) {}
