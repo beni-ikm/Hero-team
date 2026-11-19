@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 public class CreatureBehaviorFactory {
     public static CreatureBehavior create(String behaviorType) {

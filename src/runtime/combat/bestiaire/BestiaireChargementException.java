@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 public class BestiaireChargementException extends RuntimeException {
     public BestiaireChargementException(String message) {

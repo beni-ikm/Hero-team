@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

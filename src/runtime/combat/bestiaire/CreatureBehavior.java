@@ -1,6 +1,6 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
-import Combat.Combatant;
+import runtime.combat.Combatant;
 import java.util.List;
 
 public interface CreatureBehavior {

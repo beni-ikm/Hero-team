@@ -1,15 +1,15 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
-import Combat.Combatant;
+import runtime.combat.Combatant;
 import java.util.Comparator;
 import java.util.List;
 
-public class StrongestHeroBehavior implements CreatureBehavior {
+public class WeakestHeroBehavior implements CreatureBehavior {
     @Override
     public Combatant chooseTarget(List<Combatant> candidates) {
         return candidates.stream()
             .filter(c -> c.isHero() && !c.isKnockedOut())
-            .max(Comparator.comparingInt(Combatant::getCurrentHitPoints))
+            .min(Comparator.comparingInt(Combatant::getCurrentHitPoints))
             .orElseGet(() -> candidates.stream()
                 .filter(c -> !c.isKnockedOut())
                 .findFirst()

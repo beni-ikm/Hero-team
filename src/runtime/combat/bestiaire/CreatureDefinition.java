@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 public record CreatureDefinition(
     String name,

@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 import java.io.IOException;
 import java.nio.file.Files;

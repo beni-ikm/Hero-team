@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 import java.nio.file.Path;
 import java.util.Collection;

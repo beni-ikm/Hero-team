@@ -1,4 +1,4 @@
-package Combat.Bestiaire;
+package runtime.combat.bestiaire;
 
 public class CreatureNonTrouveeException extends RuntimeException {
     public CreatureNonTrouveeException(String nomCreature) {
