@@ -17,18 +17,18 @@ public class LeaveLobbyUseCase {
 
     public void execute(LeaveLobbyCommand command) {
         if (!command.requesterPlayerId().equals(command.targetPlayerId())) {
-            throw new ApiException(403, "FORBIDDEN", "Vous ne pouvez retirer que vous-même d'un lobby.");
+            throw new ApiException(403, "FORBIDDEN", "You can only remove yourself from a lobby.");
         }
 
         LobbyRoom lobby = lobbyRepository.findById(command.lobbyId())
-                .orElseThrow(() -> new ApiException(404, "LOBBY_NOT_FOUND", "Lobby introuvable."));
+                .orElseThrow(() -> new ApiException(404, "LOBBY_NOT_FOUND", "Lobby not found."));
 
         if (lobby.state() == LobbyState.STARTED) {
-            throw new ApiException(409, "GAME_ALREADY_STARTED", "Impossible de quitter un lobby une fois la partie lancée.");
+            throw new ApiException(409, "GAME_ALREADY_STARTED", "Cannot leave a lobby once the game has started.");
         }
 
         if (lobby.state() == LobbyState.CLOSED || !lobby.hasMember(command.targetPlayerId())) {
-            throw new ApiException(404, "PLAYER_NOT_IN_LOBBY", "Le joueur n'est pas membre de ce lobby.");
+            throw new ApiException(404, "PLAYER_NOT_IN_LOBBY", "Player is not a member of this lobby.");
         }
 
         lobby.removeMember(command.targetPlayerId());

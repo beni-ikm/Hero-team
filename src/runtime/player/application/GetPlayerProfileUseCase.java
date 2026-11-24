@@ -16,11 +16,11 @@ public class GetPlayerProfileUseCase {
 
     public PlayerProfileOutput execute(GetPlayerProfileQuery query) {
         if (!query.requesterPlayerId().equals(query.targetPlayerId())) {
-            throw new ApiException(403, "FORBIDDEN", "Vous ne pouvez consulter que votre propre profil.");
+            throw new ApiException(403, "FORBIDDEN", "You can only view your own profile");
         }
 
         Player player = playerRepository.findById(query.targetPlayerId())
-                .orElseThrow(() -> new ApiException(404, "PLAYER_NOT_FOUND", "Joueur introuvable."));
+                .orElseThrow(() -> new ApiException(404, "PLAYER_NOT_FOUND", "Player not found."));
 
         return new PlayerProfileOutput(player.id(), player.pseudonym(), player.email());
     }
