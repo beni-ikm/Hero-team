@@ -7,6 +7,7 @@ import runtime.player.application.CreatePlayerUseCase;
 import runtime.player.domain.PlayerRepository;
 import runtime.player.infrastructure.PlayerPersistenceMapper;
 import runtime.player.infrastructure.InMemoryPlayerRepository;
+import runtime.player.infrastructure.security.Argon2PasswordHasher;
 
 public class PlayerInstaller {
 
@@ -22,7 +23,9 @@ public class PlayerInstaller {
                 new PlayerOutputMapper();
         CreatePlayerUseCase createAccountUseCase =
                 new CreatePlayerUseCase(
-                        playerRepository, outputMapper);
+                        playerRepository,
+                        outputMapper,
+                        new Argon2PasswordHasher());
 
         resourceConfig.register(
                 new PlayerResource(
