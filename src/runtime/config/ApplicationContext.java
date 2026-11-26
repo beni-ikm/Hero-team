@@ -18,6 +18,9 @@ public class ApplicationContext {
         new PlayerInstaller().install(resourceConfig);
         new LobbyInstaller().install(resourceConfig);
 
+        LobbyInstaller lobbyInstaller = new LobbyInstaller();
+        lobbyInstaller.install(resourceConfig);
+
         return resourceConfig;
     }
 }
