@@ -6,13 +6,16 @@ public class CreatePlayerUseCase {
 
     private final PlayerRepository playerRepository;
     private final PlayerOutputMapper outputMapper;
+    private final PasswordHasher passwordHasher;
 
     public CreatePlayerUseCase(
             PlayerRepository playerRepository,
-            PlayerOutputMapper outputMapper) {
+            PlayerOutputMapper outputMapper,
+            PasswordHasher passwordHasher) {
 
         this.playerRepository = playerRepository;
         this.outputMapper = outputMapper;
+        this.passwordHasher = passwordHasher;
 
     }
 
@@ -22,7 +25,7 @@ public class CreatePlayerUseCase {
                 PlayerId.generate(),
                 new PlayerPseudonym(command.pseudonym()),
                 new PlayerEmail(command.email()),
-                new PlayerPassword(command.password()));
+                PlayerPassword.fromRawPassword(command.password(), passwordHasher));
 
 
         playerRepository.save(player);
