@@ -1,47 +1,41 @@
 package runtime.lobby.api;
 
-import jakarta.ws.rs.*;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.SecurityContext;
-import runtime.lobby.api.dto.LobbyResponse;
-import runtime.lobby.application.CreateLobbyCommand;
-import runtime.lobby.application.CreateLobbyUseCase;
-import runtime.lobby.application.LobbyOutput;
-
-import java.net.URI;
+import jakarta.ws.rs.core.Response;
+import runtime.lobby.application.LeaveLobbyCommand;
+import runtime.lobby.application.LeaveLobbyUseCase;
+import runtime.shared.api.AuthExtractor;
+import runtime.shared.api.TokenAuthenticator;
 
 @Path("/lobbies")
-@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class LobbyResource {
 
-    private final CreateLobbyUseCase createLobbyUseCase;
-    private final LobbyResponseMapper responseMapper;
+    private final LeaveLobbyUseCase leaveLobbyUseCase;
+    private final TokenAuthenticator tokenAuthenticator;
 
-    public LobbyResource(CreateLobbyUseCase lobbyUseCase, LobbyResponseMapper responseMapper) {
-        this.createLobbyUseCase = lobbyUseCase;
-        this.responseMapper = responseMapper;
+    @Inject
+    public LobbyResource(LeaveLobbyUseCase leaveLobbyUseCase, TokenAuthenticator tokenAuthenticator) {
+        this.leaveLobbyUseCase = leaveLobbyUseCase;
+        this.tokenAuthenticator = tokenAuthenticator;
     }
 
-    @POST
-    public Response createLobby(
-            @Context SecurityContext securityContext) {
+    @DELETE
+    @Path("/{lobbyId}/players/{playerId}")
+    public Response leaveLobby(
+            @Context HttpHeaders headers,
+            @PathParam("lobbyId") String lobbyId,
+            @PathParam("playerId") String playerId) {
 
-        String playerId = securityContext.getUserPrincipal().getName();
-
-        CreateLobbyCommand command = new CreateLobbyCommand(playerId);
-
-        LobbyOutput output = createLobbyUseCase.execute(command);
-
-        LobbyResponse response = responseMapper.toResponse(output);
-
-        URI location = URI.create("/lobbies/"+ output.id());
-
-        return Response.created(location)
-                .entity(response)
-                .build();
+        String requesterId = AuthExtractor.requirePlayerId(headers, tokenAuthenticator);
+        leaveLobbyUseCase.execute(new LeaveLobbyCommand(requesterId, lobbyId, playerId));
+        return Response.noContent().build();
     }
-
 }
