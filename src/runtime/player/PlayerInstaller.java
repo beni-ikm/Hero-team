@@ -13,6 +13,7 @@ import runtime.player.application.GetPlayerProfileUseCase;
 import runtime.player.domain.PlayerRepository;
 import runtime.player.infrastructure.PlayerPersistenceMapper;
 import runtime.player.infrastructure.InMemoryPlayerRepository;
+import runtime.player.infrastructure.security.Argon2PasswordHasher;
 import runtime.shared.api.ApiExceptionMapper;
 import runtime.shared.api.DevTokenAuthenticator;
 import runtime.shared.api.TokenAuthenticator;
@@ -32,6 +33,9 @@ public class PlayerInstaller {
                 new PlayerOutputMapper();
         CreatePlayerUseCase createAccountUseCase =
                 new CreatePlayerUseCase(
+                        playerRepository,
+                        outputMapper,
+                        new Argon2PasswordHasher());
                         new PlayerFactory(), playerRepository, outputMapper);
         GetPlayerUseCase getPlayerUseCase =
                 new GetPlayerUseCase(playerRepository, outputMapper);
