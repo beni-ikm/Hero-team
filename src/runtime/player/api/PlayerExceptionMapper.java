@@ -5,15 +5,14 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import runtime.player.domain.exception.PlayerException;
 
-public class PlayerExceptionMapper implements ExceptionMapper<PlayerException> {
+public abstract class PlayerExceptionMapper<E extends PlayerException> implements  ExceptionMapper<E>{
 
-    private final static int UNPROCESSABLE_CONTENT = 422;
+    public record ErrorResponse(String error, String message){}
 
-    @Override
-    public Response toResponse(PlayerException exception) {
-        return Response.status(UNPROCESSABLE_CONTENT)
-                .type(MediaType.TEXT_PLAIN)
-                .entity(exception.getMessage())
+    protected Response buildErrorResponse(int httpStatus, String errorCode, E exception) {
+        return Response.status(httpStatus)
+                .type(MediaType.APPLICATION_JSON)
+                .entity(new ErrorResponse(errorCode, exception.getMessage()))
                 .build();
     }
 
