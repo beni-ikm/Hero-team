@@ -1,43 +1,26 @@
 package runtime.lobby;
 
+import jakarta.inject.Singleton;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
-import runtime.lobby.api.LobbyExceptionMapper;
-import runtime.lobby.api.LobbyResponseMapper;
 import runtime.lobby.api.LobbyResource;
-import runtime.lobby.application.CreateLobbyUseCase;
-import runtime.lobby.application.LobbyOutputMapper;
-import runtime.lobby.domain.LobbyFactory;
-import runtime.lobby.domain.LobbyRepository;
-import runtime.lobby.infrastructure.InMemoryLobbyRepository;
-import runtime.lobby.infrastructure.LobbyPersistenceMapper;
+import runtime.lobby.application.LeaveLobbyUseCase;
+import runtime.lobby.domain.LobbyRoomRepository;
+import runtime.lobby.infra.InMemoryLobbyRoomRepository;
+import runtime.shared.api.ApiExceptionMapper;
 
 public class LobbyInstaller {
 
-    public void install(ResourceConfig resourceConfig){
-        LobbyPersistenceMapper persistenceMapper =
-                new LobbyPersistenceMapper();
+    public void install(ResourceConfig resourceConfig) {
+        resourceConfig.register(LobbyResource.class);
+        resourceConfig.register(ApiExceptionMapper.class);
 
-        LobbyRepository lobbyRepository =
-                new InMemoryLobbyRepository(persistenceMapper);
-
-        LobbyFactory lobbyFactory = new LobbyFactory();
-
-        LobbyOutputMapper outputMapper = new LobbyOutputMapper();
-
-        CreateLobbyUseCase createLobbyUseCase =
-                new CreateLobbyUseCase(
-                        lobbyFactory,
-                        lobbyRepository,
-                        outputMapper);
-
-
-        LobbyResource lobbyResource =
-                new LobbyResource(
-                        createLobbyUseCase,
-                        new LobbyResponseMapper()
-                );
-
-        resourceConfig.register(lobbyResource);
-        resourceConfig.register(new LobbyExceptionMapper());
+        resourceConfig.register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bind(InMemoryLobbyRoomRepository.class).to(LobbyRoomRepository.class).in(Singleton.class);
+                bind(LeaveLobbyUseCase.class).to(LeaveLobbyUseCase.class).in(Singleton.class);
+            }
+        });
     }
 }
