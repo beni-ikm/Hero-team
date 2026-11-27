@@ -10,6 +10,7 @@ import runtime.player.application.GetPlayerUseCase;
 import runtime.player.domain.PlayerFactory;
 import runtime.player.api.PlayerResource;
 import runtime.player.application.GetPlayerProfileUseCase;
+import runtime.player.api.*;
 import runtime.player.domain.PlayerRepository;
 import runtime.player.infrastructure.PlayerPersistenceMapper;
 import runtime.player.infrastructure.InMemoryPlayerRepository;
@@ -40,6 +41,14 @@ public class PlayerInstaller {
         GetPlayerUseCase getPlayerUseCase =
                 new GetPlayerUseCase(playerRepository, outputMapper);
 
+        PlayerOutputMapper outputMapper =
+                new PlayerOutputMapper();
+        CreatePlayerUseCase createAccountUseCase =
+                new CreatePlayerUseCase(
+                        playerRepository,
+                        outputMapper,
+                        new Argon2PasswordHasher());
+
         resourceConfig.register(
                 new PlayerResource(
                         createAccountUseCase,
@@ -58,6 +67,11 @@ public class PlayerInstaller {
 
         resourceConfig.register(new PlayerExceptionMapper());
         resourceConfig.register(new PlayerNotFoundExceptionMapper());
-    }
+        resourceConfig.register(
+                new PlayerResource(
+                        createAccountUseCase,
+                        new CreatePlayerRequestMapper()));
 
+        resourceConfig.register(new PlayerExceptionMapper());
+    }
 }

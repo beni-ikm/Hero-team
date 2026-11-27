@@ -21,6 +21,15 @@ import runtime.player.application.PlayerProfileOutput;
 import runtime.shared.api.TokenAuthenticator;
 import runtime.shared.api.AuthExtractor;
 import java.net.URI;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
+import runtime.player.api.dto.CreatePlayerRequest;
+import runtime.player.application.*;
 
 @Path("/players")
 @Consumes(MediaType.APPLICATION_JSON)
