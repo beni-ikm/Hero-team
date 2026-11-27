@@ -3,20 +3,38 @@ package runtime.player.domain;
 import java.util.Objects;
 
 public class Player {
-    private final String id;
-    private final String pseudonym;
-    private final String email;
-    private final String passwordHash;
 
-    public Player(String id, String pseudonym, String email, String passwordHash) {
+    private final PlayerId id;
+    private final PlayerPseudonym pseudonym;
+    private final PlayerEmail email;
+    private final PlayerPassword password;
+
+    public Player(
+            PlayerId id,
+            PlayerPseudonym pseudonym,
+            PlayerEmail email,
+            PlayerPassword password) {
+
         this.id = Objects.requireNonNull(id);
         this.pseudonym = Objects.requireNonNull(pseudonym);
         this.email = Objects.requireNonNull(email);
-        this.passwordHash = Objects.requireNonNull(passwordHash);
+        this.password = Objects.requireNonNull(password);
+
     }
 
-    public String id() { return id; }
-    public String pseudonym() { return pseudonym; }
-    public String email() { return email; }
-    public String passwordHash() { return passwordHash; }
+    public PlayerId playerId() { return id; }
+
+    public PlayerPseudonym playerPseudonym() { return pseudonym; }
+
+    public PlayerEmail playerEmail() { return email; }
+
+    public PlayerPassword playerPassword() { return password; }
+
+    @Override
+    public boolean equals(Object other) { return other instanceof Player player && id.equals(player.id); }
+
+    @Override
+    public int hashCode() { return id.hashCode(); }
+
+
 }
