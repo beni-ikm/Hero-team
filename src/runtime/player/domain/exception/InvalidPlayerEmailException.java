@@ -1,6 +1,6 @@
 package runtime.player.domain.exception;
 
-public class InvalidPlayerEmailException extends RuntimeException {
+public class InvalidPlayerEmailException extends PlayerException {
 
     public InvalidPlayerEmailException() {
 

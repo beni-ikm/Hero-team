@@ -1,6 +1,7 @@
 package runtime.player.domain;
 
 import runtime.player.domain.exception.InvalidPlayerPasswordException;
+import runtime.player.domain.exception.PlayerPasswordTooShortException;
 
 import java.util.Objects;
 
@@ -11,6 +12,9 @@ public record PlayerPassword(String value) {
     public PlayerPassword {
         if (invalidPassword(value)){
             throw new InvalidPlayerPasswordException();
+        }
+        if (shortPassword(value)) {
+            throw new PlayerPasswordTooShortException();
         }
     }
 
@@ -32,7 +36,13 @@ public record PlayerPassword(String value) {
     }
 
     public static boolean invalidPassword(String password) {
-        if (password == null || password.isBlank() || password.length() < 8) {
+        if (password == null || password.isBlank()) {
+            return true;
+        }
+        return false;
+    }
+    public static boolean shortPassword (String password) {
+        if (password.length() < 8) {
             return true;
         }
         return false;
